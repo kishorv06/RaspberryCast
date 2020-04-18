@@ -94,8 +94,7 @@ def stream():
     try:
         if ('localhost' in url) or ('127.0.0.1' in url):
             ip = request.environ['REMOTE_ADDR']
-            logger.debug('''URL contains localhost adress. \
-Replacing with remote ip : ''' + ip)
+            logger.debug('''URL contains localhost adress. Replacing with remote ip : ''' + ip)
             url = url.replace('localhost', ip).replace('127.0.0.1', ip)
 
         if 'subtitles' in request.query:
@@ -104,8 +103,7 @@ Replacing with remote ip : ''' + ip)
             if ('localhost' in subtitles) or ('127.0.0.1' in subtitles):
                             ip = request.environ['REMOTE_ADDR']
                             logger.debug(
-                                '''Subtitle path contains localhost adress.
-Replacing with remote IP.''')
+                                '''Subtitle path contains localhost adress. Replacing with remote IP.''')
                             subtitles = subtitles\
                                 .replace('localhost', ip)\
                                 .replace('127.0.0.1', ip)
