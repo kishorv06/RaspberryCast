@@ -63,7 +63,7 @@ echo "Cloning project from GitHub.."
 echo ""
 echo "============================================================"
 
-su - $USER -c "git clone https://github.com/vincelwt/RaspberryCast.git"
+su - $USER -c "git clone https://github.com/kishorv06/RaspberryCast.git"
 chmod +x ./RaspberryCast/RaspberryCast.sh
 
 echo ""
