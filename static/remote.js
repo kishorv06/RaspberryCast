@@ -77,8 +77,8 @@ function mkrequest(url, response) {
 $(function() {
 
 	$( "#castbtn" ).click(function() {
-		if ( $( "#media_url" ).val() !== "" ) {
-			var url = $( "#media_url" ).val();
+		var url =  prompt("Enter video URL","");
+		if ( url !== "" ) {
 			var url_encoded_url = encodeURIComponent(url);
 			addToHistory(url);
 			mkrequest("/stream?url=" + url_encoded_url, 1);

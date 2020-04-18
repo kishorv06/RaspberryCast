@@ -1,23 +1,46 @@
+/* Ripple effect */
+.ripple:focus:not(:active) {
+  background-image: radial-gradient(circle at 50% 50%, rgba(256, 256, 256, 0.3) 10%, transparent 10%);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0 0;
+  
+  animation: ripple 0.5s;
+}
+
+@keyframes ripple {
+  from {
+    background-size: 0 0;
+  }
+  to {
+    background-size: 1000% 1000%;
+  }
+}
+
+body {
+	background-color: #fafafa;
+}
+
 #whole {
 	width: 100%;
 	max-width: 500px;
-	height: 240px;	
+	margin-top: 10px;
 }
 
-.fifty {
-	width: 45%;
-	max-width: 250px;
-	margin: 10px 5px;
+.btn {
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	margin: 5px;
+	color: #fff;
 }
 
-.ninety {
-	width: 93%;
-	max-width: 500px;
-	margin: 10px;
-}
-
-button {
-	height: 70px;
+.btn:focus,
+.btn:active,
+.btn:hover {
+	outline: 0 !important;
+	border: none;
+	color: #fff;
 }
 
 .input-group {
@@ -68,4 +91,105 @@ span.tb {
     cursor: pointer;
     z-index: 2;
     display: none
+}
+
+.d-pad {
+	background-color: #1f2024;
+	border-radius: 25px;
+	padding: 8px;
+	width: 100%;
+	max-width: 320px;
+	margin-bottom: 10px;
+}
+
+.d-pad button {
+	border-radius: 0px;
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	border-image-width: 0px;
+	background-color: #1f2024;
+	color: #fff;
+}
+
+.d-pad button:nth-child(1) {
+	width: 100%;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.d-pad button:nth-child(2) {
+	width: 32%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.d-pad button:nth-child(3) {
+	width: 32%;
+	background-color: #3c4042;
+	border-radius: 25px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.d-pad button:nth-child(4) {
+	width: 32%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.d-pad button:nth-child(5) {
+	width: 100%;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.pair {
+	background-color: #1e1f24;
+	color: #fff;
+}
+
+.pair button {
+	margin: 0px;
+	background-color: #1e1f24;
+	border: none;
+}
+
+.pair.unconnected {
+	background-color: transparent;
+}
+
+.pair.horizontal {
+	max-width: 180px;
+	margin-top: 15px;
+}
+
+.pair.vertical {
+	max-width: 100px;
+	margin: 60px 40px;
+	display: inline-block;
+}
+
+.pair.horizontal button:nth-child(1) {
+	margin-left: -50%;
+	margin-right: 25px;
+}
+
+.pair.horizontal button:nth-child(2) {
+	margin-right: -50%;
+	margin-left: 25px;
+}
+
+.pair.vertical button:nth-child(1) {
+	margin-top: -50%;
+	margin-bottom: 10px;
+}
+
+.pair.vertical button:nth-child(2) {
+	margin-bottom: -50%;
+	margin-top: 10px;
+}
+
+#stream_form {
+	max-width: 320px;
 }
